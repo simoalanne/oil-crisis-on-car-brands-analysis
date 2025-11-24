@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import csv as csv
 
-csv_file_path = 'car-data.csv'
+csv_file_path = 'data/car-data.csv'
 
 data = pd.read_csv(csv_file_path)
 mpg = data['mpg']
@@ -12,3 +12,8 @@ average_mpg = np.mean(mpg)
 median_mpg = np.median(mpg)
 average_displacement = np.mean(displacement)
 median_displacement = np.median(displacement)
+
+print(f'Average MPG: {average_mpg}')
+print(f'Median MPG: {median_mpg}')
+print(f'Average Displacement: {average_displacement}')
+print(f'Median Displacement: {median_displacement}')
