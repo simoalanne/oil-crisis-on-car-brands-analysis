@@ -45,25 +45,22 @@ def data_plotting(data):
         avg_mpg.plot(ax=ax1, marker='o')
         ax1.set_title('Average MPG by Origin')
         ax1.set_ylabel('MPG')
-        ax.tick_params(labelbottom=True)
 
     if not median_mpg.empty:
         median_mpg.plot(ax=ax2, marker='o')
         ax2.set_title('Median MPG by Origin')
         ax2.set_ylabel('MPG')
-        ax.tick_params(labelbottom=True)
 
     if not avg_disp.empty:
         avg_disp.plot(ax=ax3, marker='o')
         ax3.set_title('Average Displacement by Origin')
         ax3.set_ylabel('Displacement')
-        ax.tick_params(labelbottom=True)
+
 
     if not median_disp.empty:
         median_disp.plot(ax=ax4, marker='o')
         ax4.set_title('Median Displacement by Origin')
         ax4.set_ylabel('Displacement')
-        ax.tick_params(labelbottom=True)
 
     for ax in axes.flatten():
         ax.grid(True)
