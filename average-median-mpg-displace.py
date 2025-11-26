@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 csv_file_path = 'data/car-data.csv'
 
@@ -14,7 +13,6 @@ def main():
         if data['origin'].dtype in ['int64', 'float64']:
             data['origin'] = data['origin'].map(origin_map)
 
-        # Normalize year (70 -> 1970)
         if data['year'].max() < 100:
             data['year'] = data['year'] + 1900
 
@@ -30,7 +28,7 @@ def main():
             pass
 
 def data_plotting(data):
-    years = range(1970, 1983)
+    years = range(1970, 1982)
     origins = ['USA', 'EU', 'JP']
 
     avg_mpg = data.groupby(['year', 'origin'])['mpg'].mean().unstack()
@@ -65,6 +63,12 @@ def data_plotting(data):
     for ax in axes.flatten():
         ax.grid(True)
         ax.legend(title='Origin')
+
+    for ax in axes.flatten():
+        ax.grid(True)
+        ax.legend(title='Origin')
+        ax.set_xlabel('Year')             # Ensure label is set for all
+        ax.tick_params(labelbottom=True)
 
     plt.tight_layout()
     plt.savefig('average_median_mpg-displacement.png')
