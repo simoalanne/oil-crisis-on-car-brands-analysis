@@ -76,7 +76,7 @@ def data_plotting(data):
         ax.legend(title='Origin')
 
     plt.tight_layout()
-    plt.savefig('car_data_plots.png')
+    plt.savefig('average_median_mpg-displacement.png')
 
 if __name__ == "__main__":
     main()
