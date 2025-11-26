@@ -31,22 +31,22 @@ def data_plotting(data):
     years = range(1970, 1982)
     origins = ['USA', 'EU', 'JP']
 
-    avg_mpg = data.groupby(['year', 'origin'])['mpg'].mean().unstack()
-    median_mpg = data.groupby(['year', 'origin'])['mpg'].median().unstack()
-    avg_disp = data.groupby(['year', 'origin'])['displacement'].mean().unstack()
-    median_disp = data.groupby(['year', 'origin'])['displacement'].median().unstack()
+    avg_mpg = data.groupby(['year', 'origin'])['fuel_ec'].mean().unstack()
+    median_mpg = data.groupby(['year', 'origin'])['fuel_ec'].median().unstack()
+    avg_disp = data.groupby(['year', 'origin'])['displacement_l'].mean().unstack()
+    median_disp = data.groupby(['year', 'origin'])['displacement_l'].median().unstack()
 
     fig, axes = plt.subplots(2, 2, figsize=(14, 9), sharex=True)
     ax1, ax2, ax3, ax4 = axes.flatten()
 
     if not avg_mpg.empty:
         avg_mpg.plot(ax=ax1, marker='o')
-        ax1.set_title('Average MPG by Origin')
+        ax1.set_title('Average fuel consumption (l/100km) by Origin')
         ax1.set_ylabel('MPG')
 
     if not median_mpg.empty:
         median_mpg.plot(ax=ax2, marker='o')
-        ax2.set_title('Median MPG by Origin')
+        ax2.set_title('Median fuel consumption (l/100km) by Origin')
         ax2.set_ylabel('MPG')
 
     if not avg_disp.empty:
