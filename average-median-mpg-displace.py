@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 from fetchalldata import fetchalldata
 
@@ -20,8 +19,6 @@ def main():
     data_plotting(data)
 
 def data_plotting(data):
-    years = range(1970, 1982)
-    origins = ['USA', 'EU', 'JP']
 
     avg_mpg = data.groupby(['year', 'origin'])['fuel_ec'].mean().unstack()
     median_mpg = data.groupby(['year', 'origin'])['fuel_ec'].median().unstack()
@@ -59,7 +56,7 @@ def data_plotting(data):
     for ax in axes.flatten():
         ax.grid(True)
         ax.legend(title='Origin')
-        ax.set_xlabel('Year')             # Ensure label is set for all
+        ax.set_xlabel('Year')
         ax.tick_params(labelbottom=True)
 
     plt.tight_layout()
