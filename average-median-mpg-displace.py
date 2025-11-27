@@ -1,31 +1,23 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from fetchalldata import fetchalldata
 
 csv_file_path = 'data/car-data.csv'
 
 def main():
-    try:
-        data = pd.read_csv(csv_file_path, on_bad_lines='skip')
+    data = fetchalldata()
+    if isinstance(data, Exception):
+        print(f"Failed to load data: {data}")
+        return
 
-        data.rename(columns={'model_year': 'year'}, inplace=True)
+    # Ensure necessary columns are present
+    required_columns = ['year', 'origin', 'fuel_ec', 'displacement_l']
+    for col in required_columns:
+        if col not in data.columns:
+            print(f"Missing required column: {col}")
+            return
 
-        origin_map = {1: 'USA', 2: 'EU', 3: 'JP'}
-        if data['origin'].dtype in ['int64', 'float64']:
-            data['origin'] = data['origin'].map(origin_map)
-
-        if data['year'].max() < 100:
-            data['year'] = data['year'] + 1900
-
-        data_plotting(data)
-        print("Success: Plot saved as 'car_data_plots.png'")
-
-    except Exception as e:
-        print(f"Error loading data: {e}")
-        try:
-            print("Data snapshot:")
-            print(pd.read_csv(csv_file_path).head())
-        except:
-            pass
+    data_plotting(data)
 
 def data_plotting(data):
     years = range(1970, 1982)
