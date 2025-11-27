@@ -1,5 +1,5 @@
 ~~1. Get all average and median MPG and displacement over the years~~
-2. Compare the cylinder amounts between EU, Japan and USA cars
+~~2. Compare the cylinder amounts between EU, Japan and USA cars~~
 3. Analyze the impact of 1973 and 1979 oil crises on car specifications
 4. Get a sic value of whether MPG and horsepower/weight correlates
 5. MPG differences between origins
