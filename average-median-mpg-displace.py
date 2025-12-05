@@ -31,12 +31,12 @@ def data_plotting(data):
     if not avg_mpg.empty:
         avg_mpg.plot(ax=ax1, marker='o')
         ax1.set_title('Average fuel consumption (l/100km) by Origin')
-        ax1.set_ylabel('MPG')
+        ax1.set_ylabel('Fuel consumption')
 
     if not median_mpg.empty:
         median_mpg.plot(ax=ax2, marker='o')
         ax2.set_title('Median fuel consumption (l/100km) by Origin')
-        ax2.set_ylabel('MPG')
+        ax2.set_ylabel('Fuel consumption')
 
     if not avg_disp.empty:
         avg_disp.plot(ax=ax3, marker='o')
