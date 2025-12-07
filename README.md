@@ -2,15 +2,12 @@
 
 ## Introduction
 
-This repository will have scripts for researching the effects of oil crisis
-into the actions of car brands and regions to get their car efficiency better.
+This repository includes scripts to resarch the effects of oil crises on the manufacturing
+specifications of cars. The data has been forked from UCI Machine Learning Repository's data and
+we have expanded upon it slightly using Google's Gemini Pro 3 and also fix any mistakes and converting
+units into metric.
 
-## General info
-
-fetchalldata.py has a general function that can be used to fetch all the data
-in the CSV file. No need to make your own function to read it
-
-## Install and runnin instructions
+## Install and running instructions
 
 Make a virtual environment with the command
 
@@ -20,8 +17,14 @@ Then activate it
 
 `source venv/bin/activate`
 
+Alternatively, on Windows
+
+`venv/scripts/activate.bat`
+
 Install all required libraries
 
 `pip install -r requirements.txt`
 
-Then run any required code file with normal python commands to generate plots and images
+Then run the app to generate plots and analysis data
+
+`python app.py`
