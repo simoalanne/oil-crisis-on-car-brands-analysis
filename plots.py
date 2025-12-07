@@ -4,7 +4,7 @@ import numpy as np
 from scipy import stats
 
 
-def fuel_ec_and_displacement_by_year(df):
+def fuel_consumption_and_displacement_by_year(df):
     fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharex=True)
     ax1, ax2 = axes.flatten()
 
